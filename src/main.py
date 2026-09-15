@@ -32,5 +32,5 @@ for i in range(9):
     button.grid(row=i//3, column=i%3)
     buttons.append(button)
 
-current_player = 'X' #Первый ходит X
+
 root.mainloop()
