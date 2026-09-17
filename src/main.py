@@ -21,6 +21,9 @@ def check_winner():
     for combo in winning_combinations:
         a, b, c = combo
         if buttons[a]['text'] == buttons[b]['text'] == buttons[c]['text'] != '':
+            buttons[a].config(bg='lightgreen')
+            buttons[b].config(bg='lightgreen')
+            buttons[c].config(bg='lightgreen')
             return True
     return False
     
