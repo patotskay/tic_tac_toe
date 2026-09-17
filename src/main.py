@@ -43,6 +43,12 @@ def on_click(index):
             else:
                 current_player = 'X'
 
+def reset_game():
+    global current_player
+    current_player = "X"
+
+    for button in buttons:
+        button.config(text='', bg=default_button_color)
 for i in range(9):
     button = tk.Button(
         root,
@@ -55,5 +61,8 @@ for i in range(9):
     button.grid(row=i//3, column=i%3)
     buttons.append(button)
 
+default_button_color = buttons[0].cget('bg')
+reset_button = tk.Button(root, text='Новая игра', font=("Arial", 14), command=reset_game)
+reset_button.grid(row=3, column=0, columnspan=3, sticky='we')
 
 root.mainloop()
