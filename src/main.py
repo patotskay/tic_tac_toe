@@ -34,10 +34,13 @@ def on_click(index):
 
         if check_winner():
             print(f"Победил {current_player}!")
-        if current_player == 'X':
-            current_player = '0'
-        else:
-            current_player = 'X'
+        elif all(button['text'] != "" for button in buttons):
+            print('Ничья!') 
+        else:  
+            if current_player == 'X':
+                current_player = '0'
+            else:
+                current_player = 'X'
 
 for i in range(9):
     button = tk.Button(
