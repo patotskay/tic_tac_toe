@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import PhotoImage 
+from tkinter import PhotoImage
+from tkinter import messagebox 
 
 root = tk.Tk()
 #root.geometry('400x400')
@@ -33,9 +34,9 @@ def on_click(index):
         buttons[index]['text'] = current_player
 
         if check_winner():
-            print(f"Победил {current_player}!")
+            messagebox.showinfo("Победа!", f"Победил {current_player}!")
         elif all(button['text'] != "" for button in buttons):
-            print('Ничья!') 
+            messagebox.showinfo('Ничья!', "Игра окончена! Ничья!") 
         else:  
             if current_player == 'X':
                 current_player = '0'
